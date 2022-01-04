@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Plane</title>
+        <style>
+            #plane {
+                position: absolute;
+                left: 0px;
+            }
+        </style>
+
+        </head>
+    <div>
+        <!-- plane -->
+        <img id="plane" src="assets/plane.gif">
+    </div>
+     <script>
+   var planeEl = document.getElementById("plane");
+  
+  var startTime = new Date().getTime();
+  var airplane = function() {
+      var currTime = new Date().getTime();
+      var secondsElapsed = ((currTime - startTime)/1000);
+      var newLeft = secondsElapsed * 100;
+      planeEl.style.left = newLeft + "px"; 
+      window.requestAnimationFrame(airplane);
+};
+  airplane();
+        </script>
+</html>
+
